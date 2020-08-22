@@ -5,13 +5,17 @@ const bodyParser = require('body-parser')//攔截和解析所有的請求
 const methodOverride = require('method-override')//method-override將GET或者POST改成其他謂詞PUT ,DELETE等
 const flash = require('connect-flash')//會話中用於存儲消息的特殊區域
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()//環境變數
+}
+
 const routes = require('./routes')
 
 const usePassport = require('./config/passport')
 require('./config/mongoose')
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT
 
 //hbs
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
