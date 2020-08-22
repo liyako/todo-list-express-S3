@@ -1,9 +1,9 @@
-const express = require('express')
-const session = require('express-session')
-const exphbs = require('express-handlebars')
-const bodyParser = require('body-parser')
-const methodOverride = require('method-override')
-const flash = require('connect-flash')
+const express = require('express')//功能極簡的路由與中介軟體 Web 架構
+const session = require('express-session')//在 express使用第三方 模組
+const exphbs = require('express-handlebars')//跟express框架搭配的module，是一個樣版引擎
+const bodyParser = require('body-parser')//攔截和解析所有的請求
+const methodOverride = require('method-override')//method-override將GET或者POST改成其他謂詞PUT ,DELETE等
+const flash = require('connect-flash')//會話中用於存儲消息的特殊區域
 
 const routes = require('./routes')
 
